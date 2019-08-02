@@ -16,7 +16,7 @@ spec:
         ports:
         - containerPort: 8080
       - name: nginx
-        image: ./nginx
+        image: soumyasen/docker_build_repo:01
         imagePullPolicy: Always
         ports:
           - containerPort: 80
