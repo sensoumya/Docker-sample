@@ -6,11 +6,7 @@ RUN apt-get -y install \
     python3-dev \
     build-essential
 COPY nginx.conf /etc/nginx/nginx.com
-COPY app/ /app/app/
-COPY config.py /app/config.py
-COPY app.ini /app/wsgi.ini
-COPY run.py /app/run.py
-COPY requirements.txt /app/requirements.txt
+COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt --src /usr/local/src
 ENTRYPOINT ["python3"]
