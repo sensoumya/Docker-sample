@@ -4,19 +4,17 @@ metadata:
   name: flask-application
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: flask-api
   template:
     metadata:
       labels:
-        app: flask-application
+        app: flask-api
     spec:
       containers:
-      - name: flask
-        image: ./flask
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 8080
-      - name: nginx
+      - name: flask-api
         image: soumyasen/docker_build_repo:01
         imagePullPolicy: Always
         ports:
-          - containerPort: 80
+        - containerPort: 80
