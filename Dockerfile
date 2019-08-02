@@ -6,7 +6,7 @@ RUN apt-get -y install \
     python3-dev \
     build-essential
 COPY nginx.conf /etc/nginx/nginx.com
-COPY app.py /app/app.py
+COPY app/ /app/app/
 COPY config.py /app/config.py
 COPY app.ini /app/wsgi.ini
 COPY run.py /app/run.py
